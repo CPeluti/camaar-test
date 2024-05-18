@@ -34,3 +34,510 @@ Processing by FormsController#index as HTML
 Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.0ms | Allocations: 18228)
 
 
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (2.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-05-18 22:42:39.054133', '2024-05-18 22:42:39.054136') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTemplates (20240518223557)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "templates" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240518223557') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTemplateQuestions (20240518223756)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "template_questions" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar, "text" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240518223756') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateQuestionOptions (20240518223810)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "question_options" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "text" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240518223810') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/formularios" for 127.0.0.1 at 2024-05-18 19:43:48 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FormsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering forms/index.html.erb within layouts/application
+  Rendered forms/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 214)
+  Rendered layout layouts/application.html.erb (Duration: 66.9ms | Allocations: 34301)
+Completed 200 OK in 72ms (Views: 68.8ms | ActiveRecord: 0.0ms | Allocations: 38392)
+
+
+Started GET "/formularios" for 127.0.0.1 at 2024-05-18 19:45:18 -0300
+Processing by FormsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering forms/index.html.erb within layouts/application
+  Rendered forms/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 2192)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 2284)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 3195)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1>Tela de formularios</h1>
+    2: 
+    3: <% @templates.each do |template| %>
+    4:     <%= template %>
+    5: <% end %>
+  
+app/views/forms/index.html.erb:3
+Started GET "/formularios" for 127.0.0.1 at 2024-05-18 19:45:48 -0300
+Processing by FormsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering forms/index.html.erb within layouts/application
+  Rendered forms/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 1137)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | Allocations: 1229)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms | Allocations: 12548)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1>Tela de formularios</h1>
+    2: 
+    3: <% @templates.each do |template| %>
+    4:     <%= template %>
+    5: <% end %>
+  
+app/views/forms/index.html.erb:3
+Started GET "/formularios" for 127.0.0.1 at 2024-05-18 19:45:58 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FormsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering forms/index.html.erb within layouts/application
+  Rendered forms/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1596)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | Allocations: 1722)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms | Allocations: 12699)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1>Tela de formularios</h1>
+    2: 
+    3: <% @templates.each do |template| %>
+    4:     <%= template %>
+    5: <% end %>
+  
+app/views/forms/index.html.erb:3
+Started GET "/formularios" for 127.0.0.1 at 2024-05-18 19:46:11 -0300
+Processing by FormsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering forms/index.html.erb within layouts/application
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT "templates".* FROM "templates"[0m
+  ↳ app/views/forms/index.html.erb:3
+  Rendered forms/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1028)
+  Rendered layout layouts/application.html.erb (Duration: 37.0ms | Allocations: 33926)
+Completed 200 OK in 40ms (Views: 37.1ms | ActiveRecord: 0.8ms | Allocations: 35828)
+
+
+Started GET "/formularios" for 127.0.0.1 at 2024-05-18 19:53:18 -0300
+Processing by FormsController#index as HTML
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTemplate Create (0.6ms)[0m  [1m[32mINSERT INTO "templates" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "teste"], ["created_at", "2024-05-18 22:53:18.120749"], ["updated_at", "2024-05-18 22:53:18.120749"]]
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 3.3ms | Allocations: 18345)
+
+
+  
+ActiveRecord::SubclassNotFound (The single-table inheritance mechanism failed to locate the subclass: 'text'. This error is raised because the column 'type' is reserved for storing the class in case of inheritance. Please rename this column if you didn't intend it to be used for storing the inheritance class or overwrite TemplateQuestion.inheritance_column to use another column for that information.):
+  
+app/controllers/forms_controller.rb:4:in `index'
+Started GET "/formularios" for 127.0.0.1 at 2024-05-18 19:53:24 -0300
+Processing by FormsController#index as HTML
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTemplate Create (0.6ms)[0m  [1m[32mINSERT INTO "templates" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "teste"], ["created_at", "2024-05-18 22:53:24.888756"], ["updated_at", "2024-05-18 22:53:24.888756"]]
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 3.3ms | Allocations: 7977)
+
+
+  
+ActiveRecord::SubclassNotFound (The single-table inheritance mechanism failed to locate the subclass: 'text'. This error is raised because the column 'type' is reserved for storing the class in case of inheritance. Please rename this column if you didn't intend it to be used for storing the inheritance class or overwrite TemplateQuestion.inheritance_column to use another column for that information.):
+  
+app/controllers/forms_controller.rb:4:in `index'
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/formularios" for 127.0.0.1 at 2024-05-18 19:55:20 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FormsController#index as HTML
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTemplate Create (0.8ms)[0m  [1m[32mINSERT INTO "templates" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "teste"], ["created_at", "2024-05-18 22:55:20.850363"], ["updated_at", "2024-05-18 22:55:20.850363"]]
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 3.7ms | Allocations: 25594)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'question_type' for TemplateQuestion.):
+  
+app/controllers/forms_controller.rb:4:in `index'
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-05-18 22:56:14.715501', '2024-05-18 22:56:14.715504') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTemplates (20240518223557)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "templates" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240518223557') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTemplateQuestions (20240518223756)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "template_questions" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "question_type" varchar, "question_text" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240518223756') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateQuestionOptions (20240518223810)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "question_options" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "option_text" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240518223810') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/formularios" for 127.0.0.1 at 2024-05-18 19:56:19 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FormsController#index as HTML
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTemplate Create (2.6ms)[0m  [1m[32mINSERT INTO "templates" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "teste"], ["created_at", "2024-05-18 22:56:19.618990"], ["updated_at", "2024-05-18 22:56:19.618990"]]
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 6.5ms | Allocations: 27652)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'template_id' for TemplateQuestion.):
+  
+app/controllers/forms_controller.rb:4:in `index'
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/formularios" for 127.0.0.1 at 2024-05-18 19:59:29 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FormsController#index as HTML
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTemplate Create (1.9ms)[0m  [1m[32mINSERT INTO "templates" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "teste"], ["created_at", "2024-05-18 22:59:29.679158"], ["updated_at", "2024-05-18 22:59:29.679158"]]
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 4.6ms | Allocations: 26578)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'template_id' for TemplateQuestion.):
+  
+app/controllers/forms_controller.rb:4:in `index'
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/formularios" for 127.0.0.1 at 2024-05-18 20:01:43 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FormsController#index as HTML
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTemplate Create (2.5ms)[0m  [1m[32mINSERT INTO "templates" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "teste"], ["created_at", "2024-05-18 23:01:43.629651"], ["updated_at", "2024-05-18 23:01:43.629651"]]
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 5.8ms | Allocations: 26646)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'template_id' for TemplateQuestion.):
+  
+app/controllers/forms_controller.rb:4:in `index'
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-05-18 23:02:23.658381', '2024-05-18 23:02:23.658383') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTemplates (20240518223557)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "templates" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240518223557') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTemplateQuestions (20240518223756)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "template_questions" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "template_id" integer, "question_type" varchar, "question_text" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240518223756') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateQuestionOptions (20240518223810)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "question_options" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "option_text" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240518223810') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/formularios" for 127.0.0.1 at 2024-05-18 20:02:29 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FormsController#index as HTML
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTemplate Create (2.7ms)[0m  [1m[32mINSERT INTO "templates" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "teste"], ["created_at", "2024-05-18 23:02:29.055131"], ["updated_at", "2024-05-18 23:02:29.055131"]]
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/forms_controller.rb:4:in `index'
+  [1m[36mTemplateQuestion Create (0.6ms)[0m  [1m[32mINSERT INTO "template_questions" ("template_id", "question_type", "question_text", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["template_id", 1], ["question_type", "text"], ["question_text", "teste de pergunta"], ["created_at", "2024-05-18 23:02:29.103837"], ["updated_at", "2024-05-18 23:02:29.103837"]]
+  ↳ app/controllers/forms_controller.rb:4:in `index'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/forms_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering forms/index.html.erb within layouts/application
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT "templates".* FROM "templates"[0m
+  ↳ app/views/forms/index.html.erb:3
+  Rendered forms/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 827)
+  Rendered layout layouts/application.html.erb (Duration: 38.9ms | Allocations: 34704)
+Completed 200 OK in 115ms (Views: 40.8ms | ActiveRecord: 7.2ms | Allocations: 68582)
+
+
+Started GET "/formularios" for 127.0.0.1 at 2024-05-18 20:02:32 -0300
+Processing by FormsController#index as HTML
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTemplate Create (0.9ms)[0m  [1m[32mINSERT INTO "templates" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "teste"], ["created_at", "2024-05-18 23:02:32.426131"], ["updated_at", "2024-05-18 23:02:32.426131"]]
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/forms_controller.rb:4:in `index'
+  [1m[36mTemplateQuestion Create (0.6ms)[0m  [1m[32mINSERT INTO "template_questions" ("template_id", "question_type", "question_text", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["template_id", 2], ["question_type", "text"], ["question_text", "teste de pergunta"], ["created_at", "2024-05-18 23:02:32.429248"], ["updated_at", "2024-05-18 23:02:32.429248"]]
+  ↳ app/controllers/forms_controller.rb:4:in `index'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/forms_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering forms/index.html.erb within layouts/application
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT "templates".* FROM "templates"[0m
+  ↳ app/views/forms/index.html.erb:3
+  Rendered forms/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 422)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 1772)
+Completed 200 OK in 12ms (Views: 2.0ms | ActiveRecord: 1.7ms | Allocations: 5597)
+
+
+Started GET "/formularios" for 127.0.0.1 at 2024-05-18 20:03:08 -0300
+Processing by FormsController#index as HTML
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTemplate Create (0.7ms)[0m  [1m[32mINSERT INTO "templates" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "teste"], ["created_at", "2024-05-18 23:03:08.423950"], ["updated_at", "2024-05-18 23:03:08.423950"]]
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/forms_controller.rb:4:in `index'
+  [1m[36mTemplateQuestion Create (0.6ms)[0m  [1m[32mINSERT INTO "template_questions" ("template_id", "question_type", "question_text", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["template_id", 3], ["question_type", "text"], ["question_text", "teste de pergunta"], ["created_at", "2024-05-18 23:03:08.432149"], ["updated_at", "2024-05-18 23:03:08.432149"]]
+  ↳ app/controllers/forms_controller.rb:4:in `index'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/forms_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering forms/index.html.erb within layouts/application
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT "templates".* FROM "templates"[0m
+  ↳ app/views/forms/index.html.erb:3
+  Rendered forms/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 661)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 15487)
+Completed 200 OK in 24ms (Views: 9.2ms | ActiveRecord: 4.3ms | Allocations: 28519)
+
+
+Started GET "/formularios" for 127.0.0.1 at 2024-05-18 20:04:00 -0300
+Processing by FormsController#index as HTML
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTemplate Create (0.6ms)[0m  [1m[32mINSERT INTO "templates" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "teste"], ["created_at", "2024-05-18 23:04:00.258364"], ["updated_at", "2024-05-18 23:04:00.258364"]]
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/forms_controller.rb:4:in `index'
+  [1m[36mTemplateQuestion Create (0.8ms)[0m  [1m[32mINSERT INTO "template_questions" ("template_id", "question_type", "question_text", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["template_id", 4], ["question_type", "text"], ["question_text", "teste de pergunta"], ["created_at", "2024-05-18 23:04:00.266545"], ["updated_at", "2024-05-18 23:04:00.266545"]]
+  ↳ app/controllers/forms_controller.rb:4:in `index'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/forms_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering forms/index.html.erb within layouts/application
+  [1m[36mTemplate Load (0.1ms)[0m  [1m[34mSELECT "templates".* FROM "templates"[0m
+  ↳ app/views/forms/index.html.erb:3
+  [1m[36mTemplateQuestion Load (0.0ms)[0m  [1m[34mSELECT "template_questions".* FROM "template_questions" WHERE "template_questions"."template_id" = ?[0m  [["template_id", 1]]
+  ↳ app/views/forms/index.html.erb:5
+  Rendered forms/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 4047)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 4139)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 4.7ms | Allocations: 17067)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<TemplateQuestion id: 1, template_id: 1, question_type: "text", question_text: "teste de pergunta", created_at: "2024-05-18 23:02:29.103837000 +0000", updated_at: "2024-05-18 23:02:29.103837000 +0000">):
+    3: <% @templates.each do |template| %>
+    4:     <%= template.name %>
+    5:     <% template.template_questions.each do |question| %>
+    6:         <%= question.name %>
+    7:     <% end %>
+    8: <% end %>
+  
+app/views/forms/index.html.erb:6
+app/views/forms/index.html.erb:5
+app/views/forms/index.html.erb:3
+Started GET "/formularios" for 127.0.0.1 at 2024-05-18 20:04:59 -0300
+Processing by FormsController#index as HTML
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTemplate Create (0.8ms)[0m  [1m[32mINSERT INTO "templates" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "teste"], ["created_at", "2024-05-18 23:04:59.601337"], ["updated_at", "2024-05-18 23:04:59.601337"]]
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/forms_controller.rb:4:in `index'
+  [1m[36mTemplateQuestion Create (0.6ms)[0m  [1m[32mINSERT INTO "template_questions" ("template_id", "question_type", "question_text", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["template_id", 5], ["question_type", "text"], ["question_text", "teste de pergunta"], ["created_at", "2024-05-18 23:04:59.611262"], ["updated_at", "2024-05-18 23:04:59.611262"]]
+  ↳ app/controllers/forms_controller.rb:4:in `index'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/forms_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering forms/index.html.erb within layouts/application
+  [1m[36mTemplate Load (0.1ms)[0m  [1m[34mSELECT "templates".* FROM "templates"[0m
+  ↳ app/views/forms/index.html.erb:3
+  [1m[36mTemplateQuestion Load (0.0ms)[0m  [1m[34mSELECT "template_questions".* FROM "template_questions" WHERE "template_questions"."template_id" = ?[0m  [["template_id", 1]]
+  ↳ app/views/forms/index.html.erb:5
+  Rendered forms/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 3055)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 3147)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 4.8ms | Allocations: 16148)
+
+
+  
+ActionView::Template::Error (undefined method `text' for #<TemplateQuestion id: 1, template_id: 1, question_type: "text", question_text: "teste de pergunta", created_at: "2024-05-18 23:02:29.103837000 +0000", updated_at: "2024-05-18 23:02:29.103837000 +0000">):
+    3: <% @templates.each do |template| %>
+    4:     <%= template.name %>
+    5:     <% template.template_questions.each do |question| %>
+    6:         <%= question.text %>
+    7:     <% end %>
+    8: <% end %>
+  
+app/views/forms/index.html.erb:6
+app/views/forms/index.html.erb:5
+app/views/forms/index.html.erb:3
+Started GET "/formularios" for 127.0.0.1 at 2024-05-18 20:05:11 -0300
+Processing by FormsController#index as HTML
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTemplate Create (0.6ms)[0m  [1m[32mINSERT INTO "templates" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "teste"], ["created_at", "2024-05-18 23:05:11.551763"], ["updated_at", "2024-05-18 23:05:11.551763"]]
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/forms_controller.rb:4:in `index'
+  [1m[36mTemplateQuestion Create (0.6ms)[0m  [1m[32mINSERT INTO "template_questions" ("template_id", "question_type", "question_text", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["template_id", 6], ["question_type", "text"], ["question_text", "teste de pergunta"], ["created_at", "2024-05-18 23:05:11.559972"], ["updated_at", "2024-05-18 23:05:11.559972"]]
+  ↳ app/controllers/forms_controller.rb:4:in `index'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/forms_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering forms/index.html.erb within layouts/application
+  [1m[36mTemplate Load (0.1ms)[0m  [1m[34mSELECT "templates".* FROM "templates"[0m
+  ↳ app/views/forms/index.html.erb:3
+  [1m[36mTemplateQuestion Load (0.0ms)[0m  [1m[34mSELECT "template_questions".* FROM "template_questions" WHERE "template_questions"."template_id" = ?[0m  [["template_id", 1]]
+  ↳ app/views/forms/index.html.erb:5
+  [1m[36mTemplateQuestion Load (0.0ms)[0m  [1m[34mSELECT "template_questions".* FROM "template_questions" WHERE "template_questions"."template_id" = ?[0m  [["template_id", 2]]
+  ↳ app/views/forms/index.html.erb:5
+  [1m[36mTemplateQuestion Load (0.0ms)[0m  [1m[34mSELECT "template_questions".* FROM "template_questions" WHERE "template_questions"."template_id" = ?[0m  [["template_id", 3]]
+  ↳ app/views/forms/index.html.erb:5
+  [1m[36mTemplateQuestion Load (0.0ms)[0m  [1m[34mSELECT "template_questions".* FROM "template_questions" WHERE "template_questions"."template_id" = ?[0m  [["template_id", 4]]
+  ↳ app/views/forms/index.html.erb:5
+  [1m[36mTemplateQuestion Load (0.0ms)[0m  [1m[34mSELECT "template_questions".* FROM "template_questions" WHERE "template_questions"."template_id" = ?[0m  [["template_id", 5]]
+  ↳ app/views/forms/index.html.erb:5
+  [1m[36mTemplateQuestion Load (0.0ms)[0m  [1m[34mSELECT "template_questions".* FROM "template_questions" WHERE "template_questions"."template_id" = ?[0m  [["template_id", 6]]
+  ↳ app/views/forms/index.html.erb:5
+  Rendered forms/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 4761)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 19602)
+Completed 200 OK in 30ms (Views: 12.5ms | ActiveRecord: 4.4ms | Allocations: 32677)
+
+
+Started GET "/formularios" for 127.0.0.1 at 2024-05-18 20:05:49 -0300
+Processing by FormsController#index as HTML
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTemplate Create (0.8ms)[0m  [1m[32mINSERT INTO "templates" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "teste"], ["created_at", "2024-05-18 23:05:49.067640"], ["updated_at", "2024-05-18 23:05:49.067640"]]
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/forms_controller.rb:4:in `index'
+  [1m[36mTemplateQuestion Create (0.9ms)[0m  [1m[32mINSERT INTO "template_questions" ("template_id", "question_type", "question_text", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["template_id", 7], ["question_type", "text"], ["question_text", "teste de pergunta"], ["created_at", "2024-05-18 23:05:49.077571"], ["updated_at", "2024-05-18 23:05:49.077571"]]
+  ↳ app/controllers/forms_controller.rb:4:in `index'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/forms_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering forms/index.html.erb within layouts/application
+  [1m[36mTemplate Load (0.1ms)[0m  [1m[34mSELECT "templates".* FROM "templates"[0m
+  ↳ app/views/forms/index.html.erb:3
+  [1m[36mTemplateQuestion Load (0.1ms)[0m  [1m[34mSELECT "template_questions".* FROM "template_questions" WHERE "template_questions"."template_id" = ?[0m  [["template_id", 1]]
+  ↳ app/views/forms/index.html.erb:6
+  [1m[36mTemplateQuestion Load (0.0ms)[0m  [1m[34mSELECT "template_questions".* FROM "template_questions" WHERE "template_questions"."template_id" = ?[0m  [["template_id", 2]]
+  ↳ app/views/forms/index.html.erb:6
+  [1m[36mTemplateQuestion Load (0.0ms)[0m  [1m[34mSELECT "template_questions".* FROM "template_questions" WHERE "template_questions"."template_id" = ?[0m  [["template_id", 3]]
+  ↳ app/views/forms/index.html.erb:6
+  [1m[36mTemplateQuestion Load (0.0ms)[0m  [1m[34mSELECT "template_questions".* FROM "template_questions" WHERE "template_questions"."template_id" = ?[0m  [["template_id", 4]]
+  ↳ app/views/forms/index.html.erb:6
+  [1m[36mTemplateQuestion Load (0.0ms)[0m  [1m[34mSELECT "template_questions".* FROM "template_questions" WHERE "template_questions"."template_id" = ?[0m  [["template_id", 5]]
+  ↳ app/views/forms/index.html.erb:6
+  [1m[36mTemplateQuestion Load (0.0ms)[0m  [1m[34mSELECT "template_questions".* FROM "template_questions" WHERE "template_questions"."template_id" = ?[0m  [["template_id", 6]]
+  ↳ app/views/forms/index.html.erb:6
+  [1m[36mTemplateQuestion Load (0.0ms)[0m  [1m[34mSELECT "template_questions".* FROM "template_questions" WHERE "template_questions"."template_id" = ?[0m  [["template_id", 7]]
+  ↳ app/views/forms/index.html.erb:6
+  Rendered forms/index.html.erb within layouts/application (Duration: 8.7ms | Allocations: 5317)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 19942)
+Completed 200 OK in 36ms (Views: 17.7ms | ActiveRecord: 4.9ms | Allocations: 32871)
+
+
+Started GET "/formularios" for 127.0.0.1 at 2024-05-18 20:06:00 -0300
+Processing by FormsController#index as HTML
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTemplate Create (0.5ms)[0m  [1m[32mINSERT INTO "templates" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "teste"], ["created_at", "2024-05-18 23:06:00.435437"], ["updated_at", "2024-05-18 23:06:00.435437"]]
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/forms_controller.rb:3:in `index'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/forms_controller.rb:4:in `index'
+  [1m[36mTemplateQuestion Create (0.6ms)[0m  [1m[32mINSERT INTO "template_questions" ("template_id", "question_type", "question_text", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["template_id", 8], ["question_type", "text"], ["question_text", "teste de pergunta"], ["created_at", "2024-05-18 23:06:00.446805"], ["updated_at", "2024-05-18 23:06:00.446805"]]
+  ↳ app/controllers/forms_controller.rb:4:in `index'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/forms_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering forms/index.html.erb within layouts/application
+  [1m[36mTemplate Load (0.1ms)[0m  [1m[34mSELECT "templates".* FROM "templates"[0m
+  ↳ app/views/forms/index.html.erb:3
+  [1m[36mTemplateQuestion Load (0.0ms)[0m  [1m[34mSELECT "template_questions".* FROM "template_questions" WHERE "template_questions"."template_id" = ?[0m  [["template_id", 1]]
+  ↳ app/views/forms/index.html.erb:6
+  [1m[36mTemplateQuestion Load (0.0ms)[0m  [1m[34mSELECT "template_questions".* FROM "template_questions" WHERE "template_questions"."template_id" = ?[0m  [["template_id", 2]]
+  ↳ app/views/forms/index.html.erb:6
+  [1m[36mTemplateQuestion Load (0.0ms)[0m  [1m[34mSELECT "template_questions".* FROM "template_questions" WHERE "template_questions"."template_id" = ?[0m  [["template_id", 3]]
+  ↳ app/views/forms/index.html.erb:6
+  [1m[36mTemplateQuestion Load (0.0ms)[0m  [1m[34mSELECT "template_questions".* FROM "template_questions" WHERE "template_questions"."template_id" = ?[0m  [["template_id", 4]]
+  ↳ app/views/forms/index.html.erb:6
+  [1m[36mTemplateQuestion Load (0.0ms)[0m  [1m[34mSELECT "template_questions".* FROM "template_questions" WHERE "template_questions"."template_id" = ?[0m  [["template_id", 5]]
+  ↳ app/views/forms/index.html.erb:6
+  [1m[36mTemplateQuestion Load (0.0ms)[0m  [1m[34mSELECT "template_questions".* FROM "template_questions" WHERE "template_questions"."template_id" = ?[0m  [["template_id", 6]]
+  ↳ app/views/forms/index.html.erb:6
+  [1m[36mTemplateQuestion Load (0.0ms)[0m  [1m[34mSELECT "template_questions".* FROM "template_questions" WHERE "template_questions"."template_id" = ?[0m  [["template_id", 7]]
+  ↳ app/views/forms/index.html.erb:6
+  [1m[36mTemplateQuestion Load (0.0ms)[0m  [1m[34mSELECT "template_questions".* FROM "template_questions" WHERE "template_questions"."template_id" = ?[0m  [["template_id", 8]]
+  ↳ app/views/forms/index.html.erb:6
+  Rendered forms/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 5913)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 20741)
+Completed 200 OK in 32ms (Views: 13.6ms | ActiveRecord: 4.5ms | Allocations: 33792)
+
+

@@ -1,1 +1,11 @@
 <h1>Tela de formularios</h1>
+
+<% @templates.each do |template| %>
+    <h2><%= template.name %></h2>
+    <h3>
+    <% template.template_questions.each do |question| %>
+        <%= question.question_type %>
+        <%= question.question_text %>
+    <% end %>
+    </h3>
+<% end %>
