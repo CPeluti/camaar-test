@@ -24,4 +24,4 @@ e2 = Enrollment.create!(user:u3, subject_class: t1, role: "professor")
 t = Template.create!(name: "teste")
 q = t.template_questions.create!(question_type: "text", question_text: "teste de pergunta")
 
-f = Form.create!(subject_class: t1, t)
+f = Form.create!(subject_class: t1, template: t)
