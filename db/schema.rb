@@ -10,9 +10,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_18_223810) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_19_000044) do
+  create_table "answers", force: :cascade do |t|
+    t.integer "form_id"
+    t.integer "template_question_id"
+    t.string "answer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["form_id"], name: "index_answers_on_form_id"
+    t.index ["template_question_id"], name: "index_answers_on_template_question_id"
+  end
+
+  create_table "enrollments", force: :cascade do |t|
+    t.integer "subject_class_id"
+    t.string "role"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subject_class_id"], name: "index_enrollments_on_subject_class_id"
+    t.index ["user_id"], name: "index_enrollments_on_user_id"
+  end
+
+  create_table "forms", force: :cascade do |t|
+    t.integer "template_id"
+    t.integer "subject_class_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subject_class_id"], name: "index_forms_on_subject_class_id"
+    t.index ["template_id"], name: "index_forms_on_template_id"
+  end
+
   create_table "question_options", force: :cascade do |t|
     t.string "option_text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "subject_classes", force: :cascade do |t|
+    t.integer "subject_id"
+    t.string "semester"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subject_id"], name: "index_subject_classes_on_subject_id"
+  end
+
+  create_table "subjects", force: :cascade do |t|
+    t.string "name"
+    t.string "subject_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -23,10 +67,19 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_18_223810) do
     t.string "question_text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["template_id"], name: "index_template_questions_on_template_id"
   end
 
   create_table "templates", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "registration"
+    t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
